@@ -58,6 +58,7 @@ Proyecto_Retail_PowerBI/
 │   ├── resultado_anova.txt
 │   └── resumen_categorias.csv
 └── evidencias/
+    ├── Informe_Final_Retail_Multinacional_UCC_Ampliado (3).pdf
     ├── ANOVA/
     ├── Ejecucion/
     ├── PowerBI/
@@ -86,6 +87,12 @@ Los siguientes scripts usan estos resultados:
 - `prueba_spark.py` ejecuta una comprobación pequeña de que Spark puede iniciar y procesar un rango.
 
 ## Evidencias y resultados
+
+### Informe final completo
+
+El informe completo está disponible en PDF para consultar o descargar. En GitHub, abre el enlace para visualizar el documento completo; las capturas individuales también se muestran en esta sección.
+
+[Abrir o descargar el informe final completo (PDF)](./evidencias/Informe_Final_Retail_Multinacional_UCC_Ampliado%20%283%29.pdf)
 
 ### Informe de Power BI
 
