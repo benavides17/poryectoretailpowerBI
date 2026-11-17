@@ -69,6 +69,8 @@ Proyecto_Retail_PowerBI/
 
 El archivo de entrada es `datos_originales/sales_data_sample.csv`. Contiene **2.823 filas y 25 columnas**, con campos de pedidos, fechas, productos, ventas, clientes y ubicación. En los datos incluidos, las fechas van del **6 de enero de 2003 al 31 de mayo de 2005**.
 
+> **Para que las imágenes se vean en GitHub:** sube el archivo `README.md` junto con la carpeta completa `evidencias/`, conservando su estructura. Si copias el README a otra ubicación, ajusta las rutas de imágenes para que sigan apuntando a esa carpeta.
+
 El proyecto tiene dos transformaciones que parten del CSV original y producen resultados distintos:
 
 1. **Limpieza con Pandas** (`limpiar_datos.py`): elimina duplicados exactos, convierte `ORDERDATE`, quita espacios en columnas de texto, completa valores vacíos de `STATE` y `TERRITORY` con `No especificado`, y agrega `ANIO`, `MES`, `TRIMESTRE`, `ANIO_MES` e `ID_LINEA_VENTA`. El resultado es `datos_procesados/ventas_limpias.csv`.
@@ -91,21 +93,21 @@ El archivo Power BI contiene páginas de resumen, tendencias, productos y análi
 
 #### 1. Resumen general de ventas
 
-![Resumen general del informe de Power BI](evidencias/PowerBI/01_resumen_general.png)
+![Resumen general del informe de Power BI](./evidencias/PowerBI/01_resumen_general.png)
 
 La captura presenta indicadores generales, comparativa anual y ventas por país. En la imagen se muestran ventas totales de aproximadamente **10,03 millones**, **307 pedidos** y **92 clientes**.
 
 #### 2. Crecimiento y tendencias
 
-![Crecimiento y tendencias de ventas](evidencias/PowerBI/02_crecimiento_tendencias.png)
+![Crecimiento y tendencias de ventas](./evidencias/PowerBI/02_crecimiento_tendencias.png)
 
 #### 3. Análisis de productos
 
-![Análisis de ventas por producto y cliente](evidencias/PowerBI/03_analisis_productos.png)
+![Análisis de ventas por producto y cliente](./evidencias/PowerBI/03_analisis_productos.png)
 
 #### 4. Análisis geográfico
 
-![Distribución geográfica de ventas](evidencias/PowerBI/04_analisis_geografico.png)
+![Distribución geográfica de ventas](./evidencias/PowerBI/04_analisis_geografico.png)
 
 ### ETL con Spark y salida SQL/JSON
 
@@ -124,7 +126,7 @@ El reporte incluido en `resultados_anova/resultado_anova.txt` registra una prueb
 
 La prueba evalúa diferencias globales entre grupos; no identifica por sí sola qué pares de categorías difieren.
 
-![Ventas promedio por línea de producto según el análisis ANOVA](evidencias/ANOVA/grafico_anova.png)
+![Ventas promedio por línea de producto según el análisis ANOVA](./evidencias/ANOVA/grafico_anova.png)
 
 La gráfica generada también está disponible en `resultados_anova/grafico_anova.png`; el texto y el resumen por categoría se guardan en esa misma carpeta.
 
@@ -136,25 +138,25 @@ Las siguientes capturas muestran ejecuciones en la terminal de VS Code. Son evid
 
 La consola muestra el inicio de Spark y advertencias de Hadoop sobre `winutils.exe` y la configuración de `HADOOP_HOME`. En otra ejecución se ve el mensaje de finalización del ETL y la ruta del CSV generado, seguido de un error del proceso secundario de Windows. Por ello, el mensaje de finalización del script no demuestra por sí solo que el proceso haya terminado sin incidencias.
 
-![Ejecución del ETL de Spark: finalización informada y error posterior del proceso](evidencias/Ejecucion/spark-etl-finalizacion-y-error.png)
+![Ejecución del ETL de Spark: finalización informada y error posterior del proceso](./evidencias/Ejecucion/spark-etl-finalizacion-y-error.png)
 
-![Inicio de Spark con advertencia de winutils.exe y HADOOP_HOME](evidencias/Ejecucion/spark-advertencia-winutils.png)
+![Inicio de Spark con advertencia de winutils.exe y HADOOP_HOME](./evidencias/Ejecucion/spark-advertencia-winutils.png)
 
 #### Análisis ANOVA
 
 La primera captura muestra la gráfica de ventas promedio por categoría y la ejecución del análisis. La segunda muestra la conclusión impresa por el script: se rechaza H0 y se reportan diferencias estadísticamente significativas entre las medias de al menos dos categorías.
 
-![Ejecución del análisis ANOVA y gráfica por categoría](evidencias/Ejecucion/anova-grafico-y-ejecucion.png)
+![Ejecución del análisis ANOVA y gráfica por categoría](./evidencias/Ejecucion/anova-grafico-y-ejecucion.png)
 
-![Conclusión del análisis ANOVA en la terminal](evidencias/Ejecucion/anova-conclusion.png)
+![Conclusión del análisis ANOVA en la terminal](./evidencias/Ejecucion/anova-conclusion.png)
 
 #### Validación SQL y exportación JSON
 
 La validación de SQLite muestra la tabla `ventas`, sus 2.823 registros y ventas totales de 10.032.628,85. La captura de JSON muestra la exportación de 2.823 registros y el mensaje de finalización del proceso.
 
-![Validación de registros y ventas totales en SQLite](evidencias/Ejecucion/validacion-base-sqlite.png)
+![Validación de registros y ventas totales en SQLite](./evidencias/Ejecucion/validacion-base-sqlite.png)
 
-![Exportación de 2.823 registros al archivo JSON](evidencias/Ejecucion/exportacion-json.png)
+![Exportación de 2.823 registros al archivo JSON](./evidencias/Ejecucion/exportacion-json.png)
 
 ## Instalación y ejecución
 
