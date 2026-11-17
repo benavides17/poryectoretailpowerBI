@@ -1,0 +1,5 @@
+ANALISIS ANOVA - RETAIL
+Metodo: ANOVA de Welch
+Estadistico F: 27.027197388730333
+Valor p: 7.090814820580388e-29
+Conclusion: Se rechaza H0: existen diferencias estadisticamente significativas entre las medias de al menos dos categorias.
