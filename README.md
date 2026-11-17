@@ -59,6 +59,7 @@ Proyecto_Retail_PowerBI/
 │   └── resumen_categorias.csv
 └── evidencias/
     ├── ANOVA/
+    ├── Ejecucion/
     ├── PowerBI/
     ├── Spark_ETL/
     └── SQL_JSON/
@@ -126,6 +127,34 @@ La prueba evalúa diferencias globales entre grupos; no identifica por sí sola 
 ![Ventas promedio por línea de producto según el análisis ANOVA](evidencias/ANOVA/grafico_anova.png)
 
 La gráfica generada también está disponible en `resultados_anova/grafico_anova.png`; el texto y el resumen por categoría se guardan en esa misma carpeta.
+
+### Capturas de ejecución
+
+Las siguientes capturas muestran ejecuciones en la terminal de VS Code. Son evidencia del entorno en el que se ejecutaron los scripts; en particular, las advertencias de Spark y el mensaje de proceso de Windows se conservan aquí para mostrar también las limitaciones observadas.
+
+#### ETL de Spark
+
+La consola muestra el inicio de Spark y advertencias de Hadoop sobre `winutils.exe` y la configuración de `HADOOP_HOME`. En otra ejecución se ve el mensaje de finalización del ETL y la ruta del CSV generado, seguido de un error del proceso secundario de Windows. Por ello, el mensaje de finalización del script no demuestra por sí solo que el proceso haya terminado sin incidencias.
+
+![Ejecución del ETL de Spark: finalización informada y error posterior del proceso](evidencias/Ejecucion/spark-etl-finalizacion-y-error.png)
+
+![Inicio de Spark con advertencia de winutils.exe y HADOOP_HOME](evidencias/Ejecucion/spark-advertencia-winutils.png)
+
+#### Análisis ANOVA
+
+La primera captura muestra la gráfica de ventas promedio por categoría y la ejecución del análisis. La segunda muestra la conclusión impresa por el script: se rechaza H0 y se reportan diferencias estadísticamente significativas entre las medias de al menos dos categorías.
+
+![Ejecución del análisis ANOVA y gráfica por categoría](evidencias/Ejecucion/anova-grafico-y-ejecucion.png)
+
+![Conclusión del análisis ANOVA en la terminal](evidencias/Ejecucion/anova-conclusion.png)
+
+#### Validación SQL y exportación JSON
+
+La validación de SQLite muestra la tabla `ventas`, sus 2.823 registros y ventas totales de 10.032.628,85. La captura de JSON muestra la exportación de 2.823 registros y el mensaje de finalización del proceso.
+
+![Validación de registros y ventas totales en SQLite](evidencias/Ejecucion/validacion-base-sqlite.png)
+
+![Exportación de 2.823 registros al archivo JSON](evidencias/Ejecucion/exportacion-json.png)
 
 ## Instalación y ejecución
 
